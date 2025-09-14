@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light">
+    <title>Mozambique Offline‑First AI | Gemma2 1B</title>
+    <meta name="description" content="Offline-first mobile + PWA for Mozambique: on-device Gemma2 1B, low-literacy UX, benefits navigator, legal aid, privacy-first, and evidence-based monitoring." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%230cf'/%3E%3C/svg%3E">
+    <link rel="preload" as="style" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Background layers: gradient, orbs, flowlines, grain -->
+    <div class="bg gradient"></div>
+    <div class="bg orbs"></div>
+    <div class="bg flowlines"></div>
+    <div class="bg grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container flex between center-v">
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">AI Equity Mozambique</span>
+        </a>
+        <nav class="site-nav">
+          <a href="#architecture">Architecture</a>
+          <a href="#features">Features</a>
+          <a href="#flows">User Journeys</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#logistics">Field</a>
+        </nav>
+        <div class="actions">
+          <button class="btn ghost" id="langToggle" aria-label="Toggle language">EN</button>
+          <button class="btn primary" id="connectModel" aria-label="Connect local model">Connect Model</button>
+          <a class="btn cta" href="#demo">Demo Plan</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="section hero" aria-label="Hero">
+        <div class="container">
+          <div class="hero-badge">Offline‑First • On‑Device • Privacy‑Safe</div>
+          <h1 class="display">
+            Mozambique Offline‑First Assistant
+            <span class="accent">powered by Gemma2&nbsp;1B</span>
+          </h1>
+          <p class="lead">
+            A mobile app + PWA to reduce digital inequality in remote communities.
+            Works fully offline with local knowledge, low‑literacy UX, and
+            Bluetooth printing & SMS confirmations.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary glow" href="#features">Explore Capabilities</a>
+            <a class="btn ghost" href="#architecture">See Architecture</a>
+          </div>
+          <div class="hero-specs">
+            <div class="chip">Android 9+, 2–3 GB RAM</div>
+            <div class="chip">PWA Mini‑Program</div>
+            <div class="chip">Portuguese + Makhuwa/Sena (Phase 1 TTS)</div>
+            <div class="chip">≤ 1.5 GB on‑device</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture -->
+      <section class="section" id="architecture" aria-labelledby="architecture-title">
+        <div class="container">
+          <h2 id="architecture-title" class="section-title">Technical Architecture</h2>
+          <p class="section-sub">Offline‑first design with on‑device LLM, secure storage, and graceful online enhancements.</p>
+          <div class="grid cards-3">
+            <article class="card glass reveal">
+              <h3>On‑Device Inference</h3>
+              <p>Gemma2 1B (Q4_K_M) via lightweight runtime, prompt‑caching, and short‑output policies to sustain 10–20 tok/s on 2–3 GB devices.</p>
+              <ul class="meta">
+                <li>Portuguese STT/TTS offline</li>
+                <li>Makhuwa/Sena Phase 1: TTS + phrasebank</li>
+              </ul>
+            </article>
+            <article class="card glass reveal">
+              <h3>Data & Sync</h3>
+              <p>SQLite/SQLCipher + FTS5 for retrieval. Zstd‑compressed content packs with signatures, delta updates, and manual consented sync.</p>
+              <ul class="meta">
+                <li>Incremental, resumable updates</li>
+                <li>On‑device provenance & citations</li>
+              </ul>
+            </article>
+            <article class="card glass reveal">
+              <h3>Channels</h3>
+              <p>Native Android app (full capabilities) and PWA mini‑program (offline KB, forms, USSD guides). WhatsApp as text extension when online.</p>
+              <ul class="meta">
+                <li>Default external call blocking</li>
+                <li>ConnectOnion optional plugin</li>
+              </ul>
+            </article>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Bluetooth ESC/POS Printing</span>
+            <span class="pill">Android SMS Queue</span>
+            <span class="pill">Audit Log with Hash Chain</span>
+            <span class="pill">Ed25519‑signed Content Packs</span>
+            <span class="pill">Service Worker Offline Cache (PWA)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="section" id="features" aria-labelledby="features-title">
+        <div class="container">
+          <h2 id="features-title" class="section-title">Essential Features (Must‑Have)</h2>
+          <div class="grid cards-2">
+            <article class="card outline reveal">
+              <h3>Benefits & Services Navigator</h3>
+              <ul class="check">
+                <li>Pre‑qualification screeners with minimal Q&A</li>
+                <li>Actionable checklists and fillable forms (PDF + 58mm)</li>
+                <li>SMS confirmations (queued offline)</li>
+                <li>Costs and nearest locations</li>
+              </ul>
+            </article>
+            <article class="card outline reveal">
+              <h3>Legal & Administrative Aid</h3>
+              <ul class="check">
+                <li>Step‑by‑step guides (wage disputes, land rights, IDs)</li>
+                <li>Portuguese outputs; local‑language TTS summaries</li>
+                <li>Citations and credibility indicators</li>
+                <li>Mandatory human referral on high‑risk signals</li>
+              </ul>
+            </article>
+            <article class="card outline reveal">
+              <h3>Low‑Literacy Interface</h3>
+              <ul class="check">
+                <li>Icon‑based navigation, large fonts, high contrast</li>
+                <li>Voice + text modes (Portuguese STT/TTS)</li>
+                <li>Makhuwa/Sena phrasebank + TTS replies</li>
+              </ul>
+            </article>
+            <article class="card outline reveal">
+              <h3>Privacy & Security</h3>
+              <ul class="check">
+                <li>Minimal data, explicit consent gates</li>
+                <li>Local SQLCipher encryption</li>
+                <li>Audit logging with rolling hash</li>
+                <li>Default external call blocking (allowlist)</li>
+              </ul>
+            </article>
+            <article class="card outline reveal">
+              <h3>Evidence‑Based Monitoring</h3>
+              <ul class="check">
+                <li>Risk hotspots dashboard (static/interactive)</li>
+                <li>KPIs: conversations, referrals, satisfaction</li>
+                <li>Hallucination detection and flags</li>
+              </ul>
+            </article>
+          </div>
+
+          <h2 class="section-title mt-xxl">Enhanced Features (Nice‑to‑Have)</h2>
+          <div class="grid chips">
+            <div class="chip xl">ConnectOnion Network Layer</div>
+            <div class="chip xl">IVR / USSD / WhatsApp</div>
+            <div class="chip xl">Agriculture Coach</div>
+            <div class="chip xl">Health Info & Triage</div>
+            <div class="chip xl">Skills & Financial Inclusion</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- User Journeys -->
+      <section class="section" id="flows" aria-labelledby="flows-title">
+        <div class="container">
+          <h2 id="flows-title" class="section-title">User Journeys</h2>
+          <div class="journey">
+            <div class="journey-head">
+              <span class="badge">Journey 1</span>
+              <h3>Benefits Navigator</h3>
+            </div>
+            <ol class="steps">
+              <li>Home → Benefits → Select program</li>
+              <li>Eligibility Q&A (icons + Portuguese voice)</li>
+              <li>Result: eligibility + missing docs + costs/locations</li>
+              <li>Generate checklist + PDFs → Print 58mm</li>
+              <li>Offer SMS confirmation (queues if offline)</li>
+            </ol>
+          </div>
+          <div class="journey">
+            <div class="journey-head">
+              <span class="badge">Journey 2</span>
+              <h3>Legal Aid: Wage Dispute</h3>
+            </div>
+            <ol class="steps">
+              <li>Home → Legal Help → Wage dispute</li>
+              <li>Safety check → Referral if high‑risk</li>
+              <li>Guided Q&A → Citations in context</li>
+              <li>Generate Portuguese demand letter + TTS summary</li>
+              <li>Print + save PDF → Nearest authority info</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Demo & KPIs -->
+      <section class="section" id="demo" aria-labelledby="demo-title">
+        <div class="container">
+          <h2 id="demo-title" class="section-title">Demo Plan & Acceptance</h2>
+          <div class="grid cards-2">
+            <article class="card glass reveal">
+              <h3>Demo Setup</h3>
+              <ul class="meta">
+                <li>Device: Tecno/Itel, Android 10, 3 GB RAM</li>
+                <li>Printer: 58mm Bluetooth (ESC/POS)</li>
+                <li>Airplane‑mode to prove offline flows</li>
+                <li>SMS permission with clear rationale</li>
+              </ul>
+            </article>
+            <article class="card glass reveal">
+              <h3>Acceptance Criteria</h3>
+              <ul class="meta">
+                <li>P95 ≤ 1.2 s first token; ≤ 2.5 s for 32 tokens</li>
+                <li>Print success ≥ 95%; SMS delivery ≥ 95%</li>
+                <li>Task completion ≥ 80%; referrals ≥ 60%; satisfaction ≥ 4/5</li>
+                <li>Hallucination flags ≤ 2% on benchmarks</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Roadmap -->
+      <section class="section" id="roadmap" aria-labelledby="roadmap-title">
+        <div class="container">
+          <h2 id="roadmap-title" class="section-title">Implementation Roadmap</h2>
+          <div class="timeline">
+            <div class="tl-item reveal">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <h3>Phase 0 — Foundations (2–3 weeks)</h3>
+                <p>Edge Engine (LLM, retrieval, PDF/ESC‑POS, audit, SMS, BT), Gemma2 1B integration, PT STT/TTS, phrasebank pipeline, SQLCipher, PWA shell.</p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <h3>Phase 1 — MVP (4–6 weeks)</h3>
+                <p>Benefits & Legal flows, templates + citations, dashboards export, PWA mini‑program, WhatsApp prototype, field test kit.</p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <h3>Phase 2 — Pilot (4 weeks)</h3>
+                <p>Localization, community lexicons, service directories, low‑literacy tuning, battery/lite mode, referral logic & heuristics.</p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <h3>Phase 3 — Enhancements (3–6 weeks)</h3>
+                <p>ConnectOnion gateway, agriculture coach, health info, jobs/CV, hardened WhatsApp, Makhuwa/Sena TTS upgrades.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy & Security -->
+      <section class="section" id="privacy" aria-labelledby="privacy-title">
+        <div class="container">
+          <h2 id="privacy-title" class="section-title">Privacy & Security Framework</h2>
+          <div class="grid cards-3">
+            <article class="card outline reveal">
+              <h3>Minimization & Consent</h3>
+              <p>No background recording, no cloud by default. First‑run consent wizard and per‑action gates (SMS, printing, network).</p>
+            </article>
+            <article class="card outline reveal">
+              <h3>Local Protection</h3>
+              <p>SQLCipher with keystore‑bound keys; PWA vault with passcode; strict on‑device storage of user artifacts.</p>
+            </article>
+            <article class="card outline reveal">
+              <h3>Audit & Policy</h3>
+              <p>Event‑sourced logs with rolling hashes; network allowlists; ConnectOnion adapter enforcing dummy‑first payloads.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Field Logistics & Content -->
+      <section class="section" id="logistics" aria-labelledby="logistics-title">
+        <div class="container">
+          <h2 id="logistics-title" class="section-title">Field Logistics & Content Scaffolding</h2>
+          <div class="grid cards-2">
+            <article class="card glass reveal">
+              <h3>Bluetooth Printers & Carriers</h3>
+              <ul class="meta">
+                <li>Printers: Xprinter XP‑P300, Rongta RPP200/300, Zjiang ZJ‑5802/5890K</li>
+                <li>Carriers: Vodacom, Movitel, Tmcel</li>
+                <li>USSD mapping: in‑app test harness + CSV export</li>
+              </ul>
+            </article>
+            <article class="card glass reveal">
+              <h3>Seed Content → KB Packs</h3>
+              <ul class="meta">
+                <li>Benefits catalog, legal templates with citations</li>
+                <li>USSD guides; clinics & government directories</li>
+                <li>Signed manifests, 10 MB zstd shards, delta updates</li>
+              </ul>
+            </article>
+          </div>
+          <div class="subagents">
+            <h3>Sub‑Agent Prompts</h3>
+            <div class="grid cards-3">
+              <article class="card outline reveal">
+                <header class="subhead"><span class="dot"></span><strong>Legal Aid Simplifier</strong></header>
+                <p class="small">Paralegal persona turning legal templates into step‑by‑step guides with citations and high‑risk warnings.</p>
+                <button class="btn tiny copy" data-copy="legal">Copy Prompt</button>
+              </article>
+              <article class="card outline reveal">
+                <header class="subhead"><span class="dot"></span><strong>Benefits Navigator Architect</strong></header>
+                <p class="small">Social services persona converting benefits into Q&A screeners, checklists, and next steps.</p>
+                <button class="btn tiny copy" data-copy="benefits">Copy Prompt</button>
+              </article>
+              <article class="card outline reveal">
+                <header class="subhead"><span class="dot"></span><strong>Directory & USSD Specialist</strong></header>
+                <p class="small">Data structurer producing icon‑first entries for clinics, offices, and USSD codes.</p>
+                <button class="btn tiny copy" data-copy="ussd">Copy Prompt</button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mozambique specifics -->
+      <section class="section" id="moz" aria-labelledby="moz-title">
+        <div class="container">
+          <h2 id="moz-title" class="section-title">Mozambique‑Focused Design</h2>
+          <div class="grid chips">
+            <div class="chip xl">Portuguese Primary</div>
+            <div class="chip xl">Makhuwa / Sena TTS + Phrasebank</div>
+            <div class="chip xl">USSD‑centric workflows</div>
+            <div class="chip xl">Culturally sensitive iconography</div>
+            <div class="chip xl">Solar‑friendly: Lite Mode</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="container flex between center-v">
+          <p class="small">© 2025 AI Equity Mozambique • Offline‑First by Design</p>
+          <div class="foot-actions">
+            <button class="btn ghost tiny" id="toTop">Back to top</button>
+            <button class="btn ghost tiny" id="langToggleFooter">EN</button>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Connect Model Modal -->
+    <div class="modal" id="modelModal" aria-hidden="true" role="dialog" aria-label="Connect Model">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-panel" role="document">
+        <header class="modal-head">
+          <h3>Connect Local Model</h3>
+          <button class="btn tiny ghost" data-close aria-label="Close">Close</button>
+        </header>
+        <p class="small">External calls are blocked by default. By connecting, you consent to send prompts to your local endpoint (LAN or device loopback). Keep this window open to test.</p>
+        <form id="modelForm" class="form-grid">
+          <label>
+            <span>Provider</span>
+            <select name="provider" required>
+              <option value="openai">OpenAI-compatible (/v1/chat/completions)</option>
+              <option value="ollama">Ollama (/api/chat)</option>
+              <option value="llama_cpp">llama.cpp server (OpenAI mode)</option>
+              <option value="generic">Generic JSON endpoint</option>
+            </select>
+          </label>
+          <label>
+            <span>Base URL</span>
+            <input name="baseUrl" required placeholder="http://127.0.0.1:11434" />
+          </label>
+          <label>
+            <span>Model</span>
+            <input name="model" placeholder="gemma3:1b" />
+          </label>
+          <label>
+            <span>API Key (if needed)</span>
+            <input name="apiKey" placeholder="sk-..." autocomplete="off" />
+          </label>
+          <label class="span-2">
+            <span>Custom Path (generic only)</span>
+            <input name="path" placeholder="/v1/chat/completions or /api/chat" />
+          </label>
+          <div class="consent span-2">
+            <input type="checkbox" id="consent-web" name="consent" required />
+            <label for="consent-web">I consent to send prompts to this endpoint.</label>
+          </div>
+          <div class="row">
+            <button class="btn primary" type="submit">Save & Test</button>
+            <button class="btn ghost" type="button" id="modelHealth">Health Check</button>
+            <span id="modelStatus" class="small"></span>
+          </div>
+        </form>
+        <hr class="hairline" />
+        <div class="chat-test">
+          <label class="span-2"><span>Quick Test Prompt</span></label>
+          <textarea id="testPrompt" rows="3" placeholder="Say hello in Portuguese."></textarea>
+          <div class="row">
+            <button class="btn glow" id="sendTest">Send</button>
+            <span id="chatStatus" class="small"></span>
+          </div>
+          <pre id="chatOutput" class="terminal"></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inline SVG filters for glow/noise (no network deps) -->
+    <svg class="fx" width="0" height="0" aria-hidden="true">
+      <filter id="noiseFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" stitchTiles="stitch"/>
+        <feColorMatrix type="saturate" values="0"/>
+        <feComponentTransfer>
+          <feFuncA type="table" tableValues="0 0.04 0.06 0.1"/>
+        </feComponentTransfer>
+      </filter>
+    </svg>
+    <script type="module" src="llm-adapter.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+  </html>

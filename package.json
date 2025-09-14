@@ -1,0 +1,30 @@
+{
+  "name": "local-ai-demo",
+  "version": "1.0.0",
+  "description": "A sophisticated web-based interface for interacting with local AI models",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "serve": "python3 -m http.server 3000",
+    "cors-proxy-py": "python3 cors_proxy.py",
+    "cors-proxy-js": "node cors-proxy.js",
+    "ollama-start": "./start-ollama-cors.sh"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "local",
+    "demo",
+    "chat",
+    "ollama",
+    "offline"
+  ],
+  "author": "Local AI Demo",
+  "license": "MIT",
+  "dependencies": {
+    "http-proxy": "^1.18.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
